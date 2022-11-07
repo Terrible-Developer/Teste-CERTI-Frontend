@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 
 	</head>
 
 	<body>
-		<h2>Teste CERTI</h2>
-		<p>Este parágrafo irá conter alguma coisa no futuro</p>
-		<form>
-			<div>
-				<label for="pokemonName">Insira o nome do pokemon:</label>
-				<input type="text" name="pokemonName" id="pokemonName" required/>
+		<div class="container">
+			<div class="section" id="inputSection">
+				<h2>{{title}}</h2>
+				<p>Este parágrafo irá conter alguma coisa no futuro</p>
+				<form formaction="" class="inputForm">
+					<div>
+						<label for="pokemonName">Insira o nome do pokemon:</label>
+						<input type="text" name="pokemonName" id="pokemonName" required/>
+					</div>
+					<input type="submit" value="Registrar"/>
+				</form>
 			</div>
-			<input type="submit" value="Registrar"/>
-		</form>
+			<div class="section" id="listSection">
+				<h3>Pokemóns capturados</h3>
+				<p *ngFor="let pokemon of capturedPokemons">{{pokemon}}</p>
+			</div>
+		</div>
 	</body>
 
 </html>
