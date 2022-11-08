@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +15,12 @@ export default class PokemonServiceService {
 
   addPokemon(pokemon: string) {
 	  this.httpClient.post(this.apiUrl, {
-		  "pokemon": pokemon,
-		  "Content-Type": "application/json"
-	  });
+		  "pokemon": pokemon
+	  }, { responseType: 'arraybuffer' })
+	  .subscribe(
+		  data => console.log('Sucesso: ', data),
+		  error => console.log('Erro: ', error)
+	  );
   }
 
 }

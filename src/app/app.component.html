@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html>
-	<head>
-
-	</head>
-
-	<body>
-		<div class="container">
-			<div class="section" id="inputSection">
-				<h2>{{title}}</h2>
-				<p>Este parágrafo irá conter alguma coisa no futuro</p>
-				<form formaction="" class="inputForm">
-					<div>
-						<label for="pokemonName">Insira o nome do pokemon:</label>
-						<input type="text" name="pokemonName" id="pokemonName" required/>
-					</div>
-					<input type="submit" value="Registrar"/>
-				</form>
-			</div>
-			<div class="section" id="listSection">
-				<h3>Pokemóns capturados</h3>
-				<ol>
-					<li *ngFor="let pokemon of capturedPokemons">{{pokemon}}</li>
-				</ol>
-			</div>
-		</div>
-	</body>
-
+  <head>
+  </head>
+  <body>
+    <div class="container">
+	<div class="section" id="inputSection">
+	  <h2>{{title}}</h2>
+	  <p>Este parágrafo irá conter alguma coisa no futuro</p>
+	  <form #f="ngForm" (ngSubmit)="clickRegister(f)" class="inputForm">
+	    <div>
+	      <label for="pokemonName">Insira o nome do pokemon:</label>
+	      <input type="text" name="pokemonName" id="pokemonName" ngModel required/>
+	    </div>
+	    <input type="submit" value="Registrar"/>
+	  </form>
+	</div>
+	<div class="section" id="listSection">
+	    <h3>Pokemóns capturados</h3>
+		<ol>
+		  <li *ngFor="let pokemon of capturedPokemons">{{pokemon}}</li>
+		</ol>
+	</div>
+    </div>
+</body>
 </html>
