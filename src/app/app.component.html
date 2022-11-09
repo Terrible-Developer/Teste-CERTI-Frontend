@@ -18,7 +18,7 @@
 	<div class="section" id="listSection">
 	    <h3>Pokemóns capturados</h3>
 		<ol>
-		  <li *ngFor="let pokemon of capturedPokemons">{{pokemon}}</li>
+			<li *ngFor="let pokemon of capturedPokemons">ID: {{pokemon._id}} <br/> Nome: {{pokemon.name}}</li>
 		</ol>
 	</div>
     </div>

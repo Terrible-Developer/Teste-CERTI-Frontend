@@ -25,8 +25,14 @@ export class AppComponent {
   }
 
   clickRegister(f: NgForm) {
-	  this.service.addPokemon(f.value.pokemonName);
-	  this.capturedPokemons.push(f.value.pokemonName);
+	  this.service.addPokemon(f.value.pokemonName).subscribe(
+		  (pokemon: any) => {
+			  console.log('Sucesso: ', pokemon);
+			  const data: any = pokemon.data;
+			  this.capturedPokemons.push(data);
+		  },
+		  error => console.log('Erro: ', error)
+	  );
 	  f.reset();
   }
 
