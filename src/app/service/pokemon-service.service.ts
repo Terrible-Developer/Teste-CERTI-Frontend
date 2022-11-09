@@ -10,17 +10,15 @@ export default class PokemonServiceService {
 
   constructor(private httpClient: HttpClient) { }
 
+   //Faz a chamada para retornar todos os pokemons
    getCapturedPokemons() {
 	   return this.httpClient.get(this.apiUrl);
   }
 
+  //Faz a chamada para inserir um novo pokemon e retorna os dados
   addPokemon(pokemon: string) {
 	  const body = { "pokemon": pokemon };
 	  return this.httpClient.post(this.apiUrl, body);
-	  /*.subscribe(
-		  data => { console.log('Sucesso: ', data) },
-		  error => console.log('Erro: ', error)
-	  );*/
   }
 
 }

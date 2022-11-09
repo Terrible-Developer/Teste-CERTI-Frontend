@@ -17,9 +17,10 @@
 	</div>
 	<div class="section" id="listSection">
 	    <h3>Pokemóns capturados</h3>
-		<ol>
+		<ul *ngIf="capturedPokemons.length > 0; else empty">
 			<li *ngFor="let pokemon of capturedPokemons">ID: {{pokemon._id}} <br/> Nome: {{pokemon.name}}</li>
-		</ol>
+		</ul>
+		<ng-template #empty>Ainda não capturou nenhum Pokemon</ng-template>
 	</div>
     </div>
 </body>
