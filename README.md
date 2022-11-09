@@ -1,27 +1,8 @@
-# TesteCertiFront
+Front-end para o teste CERTI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.19.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Esse repositório contém o front-end para o teste de desenvolvimento full-stack.
+O projeto foi criado na versão errada do angular (11), mas logo em seguida foi feito o upgrade para a versão 14.
+As funcionalidades implementadas foram o formulário de registro de um pokemon e a lista mostrando todos os registrados (ou nenhum) atualizada dinâmicamente, com toda a lógica por trás necessária para isso.
+Vale o aviso de que não usei uma Model para os pokemons, como devia, pois só existia uma propriedade, e tomei o caminho errado de fazer tudo manualmente (mas entendo o problema com esse tipo de execução)
+O sistema de imagens não ficou muito claro, se eu precisava ter um registro de n pokemons para serem adicionados, então acabei não fazendo dessa forma, também por questões de tempo muito limitado.
+Assim como o back-end, o front-ent tem configurações de docker para rodar individualmente, mas não existe uma imagem para rodar todos os serviços.
