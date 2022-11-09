@@ -39,4 +39,14 @@ export class AppComponent {
 	  f.reset();
   }
 
+  clickDelete(index: number, id: string) {
+	const result = this.service.deletePokemon(id).subscribe(
+		(response => {
+			console.log(response);
+		})
+	);
+	console.log(result);
+	console.log('Removing pokemon ' + this.capturedPokemons.splice(index, 1));
+  }
+
 }

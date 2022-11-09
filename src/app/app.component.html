@@ -16,11 +16,17 @@
 	  </form>
 	</div>
 	<div class="section" id="listSection">
+		<div>
 	    <h3>Pokemóns capturados</h3>
-		<ul *ngIf="capturedPokemons.length > 0; else empty">
-			<li *ngFor="let pokemon of capturedPokemons">ID: {{pokemon._id}} <br/> Nome: {{pokemon.name}}</li>
+		<ul class="pokemonList" *ngIf="capturedPokemons.length > 0; else empty">
+			<div class="listD" *ngFor="let pokemon of capturedPokemons; index as i">
+				<li>ID: {{pokemon._id}} </li> 
+				<li>Nome: {{pokemon.name}}</li>
+				<button class="deleteButton" (click)="clickDelete(i, pokemon._id)">Excluir pokemon</button>
+			</div>
 		</ul>
 		<ng-template #empty>Ainda não capturou nenhum Pokemon</ng-template>
+		</div>
 	</div>
     </div>
 </body>
